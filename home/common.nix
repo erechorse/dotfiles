@@ -31,6 +31,11 @@ in
       key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzSOcFyPcFRmGtFTJEX7KRvVg0WFM67NpcYmSGXv7Kj";
       signByDefault = true;
     };
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   home.file.".ssh/allowed_signers".text = "erechorse@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzSOcFyPcFRmGtFTJEX7KRvVg0WFM67NpcYmSGXv7Kj";
