@@ -8,6 +8,7 @@ in
   home.homeDirectory = "${baseDir}/${user}";
   home.packages = [
     pkgs.gemini-cli
+    pkgs.opencode
     pkgs.tailscale
     pkgs.gh
     pkgs.zed-editor
