@@ -41,7 +41,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${user} = import ./home/common.nix;
+            home-manager.users.${user} = import ./home/wsl.nix;
           }
         ];
       };
