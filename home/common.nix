@@ -13,10 +13,12 @@ in
     pkgs.gh
     pkgs.zed-editor
     pkgs.bitwarden-desktop
+    pkgs.rustup
   ];
 
   home.sessionVariables = {
     SSH_AUTH_SOCK = "${baseDir}/${user}/.bitwarden-ssh-agent.sock";
+    RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
   };
 
   programs.git = {
