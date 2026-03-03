@@ -30,20 +30,18 @@ in
 
   programs.git = {
     enable = true;
-    settings.gpg.ssh.allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
-    settings.user = {
-      name = "erechorse";
-      email = "erechorse@gmail.com";
+    settings = {
+      gpg.ssh.allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
+      user = {
+        name = "erechorse";
+        email = "erechorse@gmail.com";
+      };
+      init.defaultBranch = "main";
     };
     signing = {
       format = "ssh";
       key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJzSOcFyPcFRmGtFTJEX7KRvVg0WFM67NpcYmSGXv7Kj";
       signByDefault = true;
-    };
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
     };
   };
 
@@ -80,7 +78,7 @@ in
     viAlias = true;
     vimAlias = true;
 
-    extraLuaConfig = ''
+    initLua = ''
       vim.opt.number = true
       vim.opt.relativenumber = true
       vim.opt.shiftwidth = 2
