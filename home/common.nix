@@ -1,6 +1,13 @@
 { config, pkgs, user, lib, ... }:
 let
   baseDir = if pkgs.stdenv.isDarwin then "/Users" else "/home";
+
+  nord-yazi = pkgs.fetchFromGitHub {
+    owner = "AdithyanA2005";
+    repo = "nord.yazi";
+    rev = "main";
+    hash = "sha256-a2Fk4nl8bCIpqP8xQulnVdycym1udLBDjUUgRo0isBg=";
+  };
 in
 {
   home.stateVersion = "26.05";
@@ -81,5 +88,20 @@ in
       vim.opt.expandtab = true
       vim.opt.termguicolors = true
     '';
+  };
+
+  programs.yazi = {
+    enable = true;
+    theme = {
+      flavor = {
+        dark = "nord";
+        light = "nord";
+      };
+    };
+  };
+
+  home.file.".config/yazi/flavors/nord.yazi" = {
+    source = nord-yazi;
+    recursive = true;
   };
 }
