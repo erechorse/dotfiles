@@ -21,6 +21,7 @@ in
     pkgs.zed-editor
     pkgs.bitwarden-desktop
     pkgs.rustup
+    pkgs.zellij
   ];
 
   home.sessionVariables = {
