@@ -22,6 +22,8 @@ in
     pkgs.bitwarden-desktop
     pkgs.rustup
     pkgs.zellij
+    pkgs.direnv
+    pkgs.nix-direnv
   ];
 
   home.sessionVariables = {
@@ -102,5 +104,10 @@ in
   home.file.".config/yazi/flavors/nord.yazi" = {
     source = nord-yazi;
     recursive = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 }
